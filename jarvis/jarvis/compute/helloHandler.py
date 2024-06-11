@@ -14,11 +14,11 @@ def lambdaS3_handler(event, context):
     bucket = event['Records'][0]['s3']['bucket']['name']
     key = event['Records'][0]['s3']['object']['key']
     response = s3.get_object(Bucket=bucket, Key=key)
-    #file_content = response['Body'].read()
+    file_content = response['Body'].read()
 
     message = 'Something was uploaded!'
     print("INFOi::")
-    print({'name': key, 'body': response})
+    print({'name': key, 'body': file_content})
     print("INFOf::")
     return {
         'statusCode': 200,
