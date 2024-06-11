@@ -10,7 +10,7 @@
 
 ## In the jarvis folder run: 
 - pip install -r requirements.txt
-- cdk deploy
+- cdk deploy --all
 
 ## Load image:
-aws s3 cp file s3://s3bucketstack-bimbobucketv154ef298a-nv7meub40m9x
+aws s3 cp imgpath s3://s3bucketstack-bimbobucketv154ef298a-nv7meub40m9x
