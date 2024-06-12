@@ -12,6 +12,9 @@
 - pip install -r requirements.txt
 - cdk deploy --all
 
+## Into layers/ailayer folder:
+- pip install -t python -r requirements.txt
+
 # Overview
 - Se crea una infraestructura basica con 2 buckets y funciones lambda 
 - Se cargan las imagenes .tif en un bucket, y se dispara un trigger para su analisis
