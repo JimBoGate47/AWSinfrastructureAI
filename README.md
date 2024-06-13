@@ -7,7 +7,7 @@
 - Los resultados se guardan en un segundo bucket
 - Para visualizar el estado/clasificación se dispone de un enpdpoint público (devuelve un HTML)
 
-# Using
+# Usage
 ### Load image:
 - aws s3 cp image.tif s3://main_s3bucket_name
 
