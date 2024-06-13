@@ -12,7 +12,7 @@
 - aws s3 cp image.tif s3://main_s3bucket_name
 
 ### View status:
-En el Browser u otro método:
+En el Browser u otro método (endpoint generada con AWS - Gateway):
 
 - curl https://mdtqyl6jjl.execute-api.us-east-1.amazonaws.com/
 

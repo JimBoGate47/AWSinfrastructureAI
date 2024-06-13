@@ -17,3 +17,7 @@
 
 # Deploy
 - cdk deploy --all
+
+# Environment variables
+## On Stacks JarvisStack and S3bucketStack lambdas
+- S3BIMBORES secondary_s3bucket_name
