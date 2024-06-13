@@ -10,14 +10,18 @@ class JarvisStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        hello_world = aws_lambda.Function(self, 
+        self.__hello_world = aws_lambda.Function(self, 
                                          id="HelloWorldV2",
                                          code=aws_lambda.Code.from_asset("./jarvis/functions"),
                                          handler="helloHandler.lambda_handler",
                                          runtime=aws_lambda.Runtime.PYTHON_3_9)
 
-        hello_world_integration = HttpLambdaIntegration(id="HelloWorldIntegration",handler=hello_world)
+        hello_world_integration = HttpLambdaIntegration(id="HelloWorldIntegration",
+                                                        handler=self.__hello_world)
         http_api = HttpApi(self, "HelloWorldHttpApi")
         http_api.add_routes(path="/",
                             methods=[HttpMethod.GET],
                             integration=hello_world_integration)
+    
+    def add_external_policy(self, external_policy):
+        self.__hello_world.add_to_role_policy(external_policy)
